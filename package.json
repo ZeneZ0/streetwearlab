@@ -1,0 +1,15 @@
+{
+  "name": "streetwearlab",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Интернет-магазин StreetWearLab: модули оформления заказа и отзывов",
+  "workspaces": ["lib/*", "artifacts/*"],
+  "scripts": {
+    "db:seed": "npm run seed -w @workspace/db",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @workspace/api-server\" \"npm run dev -w @workspace/client\"",
+    "build": "npm run build -w @workspace/client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
